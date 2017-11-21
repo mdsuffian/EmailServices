@@ -1,0 +1,173 @@
+﻿using ASMLib;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.Linq;
+using System.Net.Mail;
+using System.ServiceProcess;
+using System.Text;
+
+
+
+namespace ASMEmailServices
+{
+    public partial class Service1 : ServiceBase
+    {
+        public static string smtpmailhost = "smtp.atmex.asmpt.com";
+        private static System.Timers.Timer time { get; set; } = new System.Timers.Timer();
+        private static BackgroundWorker bw { get; set; } = new BackgroundWorker();
+        asml al = new asml("ConnectionString");
+
+
+        private void SendEmail(string Subject, string From, string To, string MsgBody)
+        {
+            MailMessage mail = new MailMessage(From, To);
+            SmtpClient client = new SmtpClient();
+            client.Port = 25;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = System.Net.CredentialCache.DefaultNetworkCredentials;
+            client.Host = smtpmailhost;
+            mail.Subject = Subject;
+            mail.Body = MsgBody;
+            mail.IsBodyHtml = true; // to generate html text formating visit https://html-online.com/editor/
+            client.Send(mail);
+        }
+        private static void GetDataRowValue(DataRow item, out string ID, out string Source, out string Status, out string cc, out string bcc, out string LastAttempt, out string Subject, out string From, out string To, out string MsgBody)
+        {
+            ID = item["ID"].ToString();
+            Source = item["Source"].ToString();
+            Subject = item["Subject"].ToString();
+            Status = item["Status"].ToString();
+            From = item["From"].ToString();
+            To = item["To"].ToString();
+            cc = item["cc"].ToString();
+            bcc = item["bcc"].ToString();
+            MsgBody = item["MsgBody"].ToString();
+            LastAttempt = item["LastAttempt"].ToString();
+        }
+        private static void AddParamToList(List<SqlParameter> paramlist, SqlParameter paramID, SqlParameter paramstatus)
+        {
+            paramlist.Clear();
+            paramlist.Add(paramID);
+            paramlist.Add(paramstatus);
+        }
+        private void UpdateSQltblmsglist(List<SqlParameter> paramlist)
+        {
+            SqlConnection con = new SqlConnection(asml.connstr);
+            con.Open();
+
+
+            al.SQLExec("usp_UpdateMsgStatus", con, paramlist.ToArray(), CommandType.StoredProcedure);
+
+            con.Close();
+        }
+        private void ProcessEmail()
+        {
+            DataTable dt = al.SQLGetDatatable("usp_GetPendingMsgList", CommandType.StoredProcedure);
+
+            foreach (DataRow item in dt.Rows)
+            {
+                string Subject;
+                string From;
+                string To;
+                string MsgBody;
+                string ID;
+                string Source;
+                string Status;
+                string cc;
+                string bcc;
+                string LastAttempt;
+
+                GetDataRowValue(item, out ID, out Source, out Status, out cc, out bcc, out LastAttempt, out Subject, out From, out To, out MsgBody);
+
+
+                List<SqlParameter> paramlist = new List<SqlParameter>();
+                SqlParameter paramID = new SqlParameter("@ID", ID);
+                SqlParameter paramstatus = new SqlParameter("@Status", 1);
+
+
+
+                try
+                {
+                    SendEmail(Subject, From, To, MsgBody);
+                }
+                catch (Exception ex)
+                {
+                    paramstatus.Value = 0;
+                }
+
+                AddParamToList(paramlist, paramID, paramstatus);
+                UpdateSQltblmsglist(paramlist);
+
+            }
+
+
+        }
+
+        private void SetupBackgroundWorker()
+        {
+
+            bw.WorkerReportsProgress = true;
+            bw.WorkerSupportsCancellation = true;
+            bw.DoWork += Bw_DoWork;
+            bw.RunWorkerCompleted += Bw_RunWorkerCompleted;
+        }
+        private void SetupTimer()
+        {
+            time.Enabled = true;
+            time.Interval = 1000;
+            time.Elapsed += Time_Tick;
+        }
+
+        private void Time_Tick(object sender, EventArgs e)
+        {
+            if (!bw.IsBusy)
+            {
+                bw.RunWorkerAsync();
+            }
+
+        }
+
+        private void Bw_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            time.Enabled = true;
+        }
+
+        private void Bw_DoWork(object sender, DoWorkEventArgs e)
+        {
+            time.Enabled = false;
+            ProcessEmail();
+        }
+
+
+        [Conditional("DEBUG_SERVICE")]
+        private static void DebugMode()
+        {
+            Debugger.Launch();
+        }
+
+        public Service1()
+        {
+            InitializeComponent();
+        }
+
+        protected override void OnStart(string[] args)
+        {
+            SetupBackgroundWorker();
+            SetupTimer();
+            EventLog.WriteEntry("ASMEmailServices has been started !");
+
+
+        }
+
+        protected override void OnStop()
+        {
+        }
+
+
+    }
+}

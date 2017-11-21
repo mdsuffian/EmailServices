@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASMEmailServices", "ASMEmailServices\ASMEmailServices.csproj", "{22A9C55F-1AD6-4431-AACD-87A972FB3F7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingPlatform", "TestingPlatform\TestingPlatform.csproj", "{18C118EE-82C1-48A9-BBB3-8E4AA2158118}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ASMEmailServiceSetup", "ASMEmailServiceSetup\ASMEmailServiceSetup.vdproj", "{EA6954F0-BEF0-4E15-8BA7-BED5BAE3E402}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22A9C55F-1AD6-4431-AACD-87A972FB3F7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A9C55F-1AD6-4431-AACD-87A972FB3F7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A9C55F-1AD6-4431-AACD-87A972FB3F7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A9C55F-1AD6-4431-AACD-87A972FB3F7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18C118EE-82C1-48A9-BBB3-8E4AA2158118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18C118EE-82C1-48A9-BBB3-8E4AA2158118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18C118EE-82C1-48A9-BBB3-8E4AA2158118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18C118EE-82C1-48A9-BBB3-8E4AA2158118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA6954F0-BEF0-4E15-8BA7-BED5BAE3E402}.Debug|Any CPU.ActiveCfg = Debug
+		{EA6954F0-BEF0-4E15-8BA7-BED5BAE3E402}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

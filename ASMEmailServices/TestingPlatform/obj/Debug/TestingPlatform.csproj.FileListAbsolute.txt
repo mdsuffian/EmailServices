@@ -1,0 +1,13 @@
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\TestingPlatform.exe.config
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\TestingPlatform.exe
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\TestingPlatform.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\ASMLib.dll
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\Twilio.Api.dll
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\ASMLib.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\Twilio.Api.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\bin\Debug\Twilio.Api.xml
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\obj\Debug\TestingPlatform.Form1.resources
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\obj\Debug\TestingPlatform.Properties.Resources.resources
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\obj\Debug\TestingPlatform.csproj.GenerateResource.Cache
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\obj\Debug\TestingPlatform.exe
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\TestingPlatform\obj\Debug\TestingPlatform.pdb

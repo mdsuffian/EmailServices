@@ -1,0 +1,14 @@
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\icon.ico
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\ASMEmailServices.exe.config
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\ASMEmailServices.exe
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\ASMEmailServices.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\ASMLib.dll
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\Twilio.Api.dll
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\ASMLib.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\Twilio.Api.pdb
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\bin\Debug\Twilio.Api.xml
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\obj\Debug\ASMEmailServices.ProjectInstaller.resources
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\obj\Debug\ASMEmailServices.Service1.resources
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\obj\Debug\ASMEmailServices.csproj.GenerateResource.Cache
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\obj\Debug\ASMEmailServices.exe
+C:\Users\mopsuffian\Documents\Visual Studio 2015\Projects\ASMEmailServices\ASMEmailServices\obj\Debug\ASMEmailServices.pdb
